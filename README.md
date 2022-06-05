@@ -1,2 +1,1 @@
-# aptee
-An aptitude exam website
+# Hospital-Assistant
