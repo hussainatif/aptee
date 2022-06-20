@@ -5,16 +5,19 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="shortcut icon" href="images/logo.png" type="images/png">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/06c86bacc2.js" crossorigin="anonymous"></script> 
         <title>
             Aptee
         </title>
    </head>
    <body>
-     <!--hiasdiahsd-->
+     <!--hiasdiahsdfgfgghg-->
         <!--<h1 class="page_heading">
             {% block page_heading%}
             {% endblock %}
@@ -29,10 +32,8 @@
         <!-- MENU BAR -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html">
-              <img id="logo" src="images/logo.png" alt="">
-              Aptee
-            </a>
+          <a class="navbar-brand" href="index.html"><i class="fa-solid fa-snowflake"></i><span id="ap">Ap</span><span id="tee">Tee</span><i class="fa-solid fa-snowflake"></i>
+          </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -42,24 +43,27 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link smoothScroll">Home</a>
+                        <a href="#home" class="nav-link smoothScroll"><i class="fa-solid fa-house-user"></i></i>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#about" class="nav-link smoothScroll">About</a>
+                        <a href="#about" class="nav-link smoothScroll"><i class="fa-solid fa-address-book"></i>About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#types" class="nav-link smoothScroll">Types</a>
+                        <a href="#types" class="nav-link smoothScroll"><i class="fa-solid fa-folder-tree"></i>Types</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="blog.html" class="nav-link"><i class="fa-solid fa-blog"></i>Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope"></i>Contact</a>
                     </li>
                     
                     <li class="nav-item">
-                        <a href="login.html" class="nav-link login">SignIn</a>
+                        <a target="_blank" href="login.html" class="nav-link login"><i class="fa-solid fa-user"></i>Log in</a>
                     </li>
+                    <li class="nav-item">
+                      <a target="_blank" href="register.html " class="nav-link signup"><i class="fa-solid fa-user-plus"></i>Sign up</a>
+                  </li>
                 </ul>
             </div>
         </div>
@@ -70,13 +74,15 @@
      <section class="hero hero-bg d-flex justify-content-center align-items-center">
                <div class="container">
                     <div class="row">
+                      
 
                         <div class="col-lg-6 col-md-10 col-12 d-flex flex-column justify-content-center align-items-center">
                               <div class="hero-text">
-
+                                <img id="logo" src="images/logo.png" alt="">
+                                <div class="altext">
                                    <h1 class="text-white" data-aos="fade-up">Your attitude, not your aptitude, will determine your altitude.</h1>
-
-                                   <a href="contact.html" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Let's Start!</a>
+                                   <button><a href="contact.html" ></a>Let's Start!</button>
+                                  </div>
 
                               </div>
                         </div>
@@ -93,25 +99,94 @@
      </section>
 
 
+     <!-- IMAGE SLIDER -->
+     
+    
+    
+     <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div>
+      
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/slider-1.png" alt="Los Angeles" class="d-block" style="width:100%" height="500px">
+          <div class="carousel-caption">
+            <h3>What</h3>
+            <p>An aptitude test is a way for employers to assess a candidate’s abilities through a variety of different testing formats. Aptitude tests will test your ability to perform tasks and react to situations at work. This includes problem-solving, prioritisation and numerical skills, amongst other things.</p>
+          </div> 
+        </div>
+        <div class="carousel-item">
+          <img src="images/slider-2.png" alt="Chicago" class="d-block" style="width:100%" height="500px">
+          <div class="carousel-caption">
+            <h3>Why</h3>
+            <p>The psychometric tests are multiple-choice and there is only ever one correct answer, your score is then marked and your level is compared against other candidates who have taken the same test as you. </p>
+          </div> 
+        </div>
+        <div class="carousel-item">
+          <img src="images/slider-3.png" alt="New York" class="d-block" style="width:100%" height="500px">
+          <div class="carousel-caption">
+            <h3>How</h3>
+            <p>There are free tests online that you can take to gauge what sort of questions to expect when taking an aptitude test. Our recruitment consultants are here to help you to prepare for every stage of the interview process, including the aptitude test. In the world of work today, organisations typically run multiple interview stages to make sure that the candidate they hire is the perfect person for the role.</p>
+          </div> 
+        </div>
+      </div>
+      
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
      <!-- ABOUT -->
      <section class="about section-padding pb-0" id="about">
           <div class="container">
-               <div class="row">
+            <div class="row">
+                <div class="col ">
+                    <h2 id="wel">Welcome to <strong>Aptee</strong></h2>
+                    <div class="img">
+                         <img id="aboutlogo" src="images/logo.png" alt="">
+                        </div>
 
-                <div class="col-lg-5 ">
-                    <img id="aboutlogo" src="images/logo.png" alt="">
+                   </div>
+                  </div>
+                  </div>
+             
+          </div>
+             <div class="container">
+              <div class="row">
+
+                <div class="col-lg-12 ">
+
+                  <div class='parent'>
+                    <div class='child1'><i class="fa-solid fa-laptop-code"></i></i></div>
+                    <div class='child'>ASSESSMENT</div>
+                    <p>Aptee will automatically suggest a 5 minute assessment to the individual everyday
+                      which focuses on the topics the individual is weak at.</p>
+                      <div class='child1'><i class="fa-solid fa-square-poll-horizontal"></i></div>
+                      <div class='child'>REPORT CARD</div>
+                      <p>After every test the report card will show a comprehensive breakdown of the results
+                        from which the student can know where they fall short.</p>
+                        <div class='child1'><i class="fa-solid fa-comment"></i></div>
+                      <div class='child'>DOUBT FORUM</div>
+                      <p>Aptee will provide a Forum where individuals can ask about doubts.</p>
+                        <div class='child1'><i class="fa-solid fa-envelope"></i></div>
+                      <div class='child'>GMAIL REMAINDER</div>
+                      <p>The user will also get email reminders for events that boost morale of the user.</p>
+                  </div>
                 </div>
 
-                    <div class="col-lg-7 ">
-                         <div class="about-info">
+                    
 
-                              <h2 class="mb-4" data-aos="fade-up">What <strong>Aptitude</strong> & Types</h2>
-
-                              <p class="mb-0 text-justify" data-aos="fade-up">An aptitude test is a way for employers to assess a candidate’s abilities through a variety of different testing formats. Aptitude tests will test your ability to perform tasks and react to situations at work. This includes problem-solving, prioritisation and numerical skills, amongst other things. The psychometric tests are multiple-choice and there is only ever one correct answer, your score is then marked and your level is compared against other candidates who have taken the same test as you. There are free tests online that you can take to gauge what sort of questions to expect when taking an aptitude test.
-
-                                Our recruitment consultants are here to help you to prepare for every stage of the interview process, including the aptitude test. In the world of work today, organisations typically run multiple interview stages to make sure that the candidate they hire is the perfect person for the role. </p>
-                              </div>
-                    </div>
+                    
 
                </div>
           </div>
@@ -296,21 +371,40 @@
 
 
      <!-- SCRIPTS -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
      <script src="js/jquery.min.js"></script>
      <script src="js/bootstrap.min.js"></script>
      <script src="js/aos.js"></script>
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
+
+    <script>
+      $(document).ready(function(){
+  $(window).scroll(function(){
+  	var scroll = $(window).scrollTop();
+	  if (scroll > 500) {
+	    $(".navbar").css("background" , "#057a8d");
+	  }
+
+	  else{
+		  $(".navbar").css("background" , "#cebe0d");  	
+	  }
+  })
+})
+     </script>
 </body>
       
     <style>
        
   
-  
+       @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kdam+Thmor+Pro&family=Piazzolla:opsz,wght@8..30,500&family=Poppins:wght@100&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kdam+Thmor+Pro&family=Lobster&family=Piazzolla:opsz,wght@8..30,500&family=Poppins:wght@100&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kdam+Thmor+Pro&family=Lobster&family=Pacifico&family=Permanent+Marker&family=Piazzolla:opsz,wght@8..30,500&family=Poppins:wght@100&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kdam+Thmor+Pro&family=Lobster&family=Pacifico&family=Piazzolla:opsz,wght@8..30,500&family=Poppins:wght@100&display=swap');
        :root {
-    --primary-color:        #057a8d;
-    --secondary-color:      #f1c111;
+    --primary-color:        #cebe0d;
+    --secondary-color:      #ec0808;
     --white-color:          #ffffff;
     --dark-color:           #171819;
     --project-bg:           #f0f8ff;
@@ -388,59 +482,7 @@
   }
 
 
-  /*  BLOCKQUOTES */
-  .quote {
-    position: relative;
-    margin: 0;
-  }
-
-  .quote::after {
-    content: "“";
-    position: absolute;
-    bottom: -80px;
-    left: 20px;
-    font-family: times;
-    color: var(--gray-color);
-    font-weight: var(--font-weight-bold);
-    font-size: 14em;
-    line-height: 0;
-    opacity: 0.10;
-  }
-
-  blockquote {
-    border-left: 5px solid rgba(0,0,0,0.05);
-    display: block;
-    margin: 42px 0;
-    padding: 14px 22px;
-    color: rgba(0,0,0,0.5);
-  }
-
-
-  /* BUTTON */
-  .custom-btn {
-    background: transparent;
-    border: 2px solid var(--dark-color);
-    border-radius: var(--border-radius-large);
-    padding: 12px 26px 14px 26px;
-    color: var(--dark-color);
-    font-family: var(--title-font-family);
-    font-size: var(--p-font-size);
-    white-space: nowrap;
-  }
-
-  .custom-btn.btn-bg {
-    background: var(--white-color);
-    color: var(--primary-color);
-    border-color: transparent;
-	transition: all .3s ease;
-  }
   
-  .custom-btn:hover,
-  .custom-btn:focus {
-    background: var(--dark-color);
-    color: var(--white-color);
-    border-color: transparent;
-  }
 
 
   /*---------------------------------------
@@ -490,63 +532,110 @@
   }
 
 #logo{
-  height: 70px;
-  width: 70px;
+  height: 150px;
+  width: 150px;
+  margin-left: 180px;
 }
 #aboutlogo{
   width: 300px;
   height: 300px;
+  text-align: center;
 }
-
+#ap{
+  font-family: 'Lobster', cursive;
+  font-weight: bolder;
+  font-size: 60px;
+  color:rgb(237, 10, 184)
+}
+#tee{
+  
+  font-weight: bolder;
+  font-size: 50px;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  color: #0a0a0a;
+}
+.fa-snowflake{
+    transition: all linear;
+    animation: rot 2s linear infinite;
+    color: rgb(250, 5, 5);
+    font-size: 50px;
+}
+@keyframes rot {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }   
+}
   /*---------------------------------------
     MENU             
   -----------------------------------------*/
 
   .navbar {
-    background: rgb(200, 45, 71);
-    z-index: 2;
+    z-index: 1;
     top: 0;
     right: 0;
     left: 0;
     padding: 0.5em;
     position: fixed;
   }
+ 
 
   .navbar-brand {
     color: var(--white-color);
-    font-size: var(--h2-font-size);
+    font-size: 30px;
   }
 
+    .nav-item i{
+      padding: 5px;
+      color: #000;
+    }
   .nav-link {
-    color: var(--white-color);
-    font-size: var(--menu-font-size);
+    color:white;
+    font-weight: bolder;
+    font-size: 15px;
     letter-spacing: 0.4px;
-    margin: 0 1.6em;
+    margin: 0 0.5em;
     padding: 0.6em;
   }
 
   .nav-link.active,
   .nav-link:hover {
-    color: var(--secondary-color);
+    color:#ddd9d9;
   }
 
   .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 0;
+    padding-right: 10px;
     padding-left: 0;
   }
 
-  .navbar-expand-lg .navbar-nav .nav-link.login {
-    border: 2px solid var(--secondary-color);
-    background-color: #f1c111;
-    border-radius: 10px;
+  .navbar-expand-lg .navbar-nav .nav-link.signup {
+    border: 1px solid #076c7d;
+    background-color: #11b9f1;
     color: white;
     font-family: var(--font-bold-family);
     padding: 0.3em 1em 0.3em 1em;
+    text-align: center;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link.signup:hover,
+  .navbar-expand-lg .navbar-nav .nav-link.signup.active {
+    background-color: #076c7d;
+    color: var(--white-color);
+  }
+  .navbar-expand-lg .navbar-nav .nav-link.login {
+    border: 1px solid #076c7d;
+    background-color: #b4c8cf;
+    color: white;
+    font-family: var(--font-bold-family);
+    padding: 0.3em 1em 0.3em 1em;
+    text-align: center;
   }
 
   .navbar-expand-lg .navbar-nav .nav-link.login:hover,
   .navbar-expand-lg .navbar-nav .nav-link.login.active {
-    background: var(--secondary-color);
+    background-color: #586061;
     color: var(--white-color);
   }
 
@@ -618,6 +707,13 @@
   .navbar-toggler .navbar-toggler-icon::after {
     top: 8px;
   }
+  .blue{
+  position:fixed;
+  top:0;
+  background:blue;
+  width:100%;
+  height:50px;
+}
 
 
 
@@ -639,7 +735,73 @@
     position: relative;
     top: 3em;
   }
+  .hero-text h1{
+    font-family: 'Permanent Marker', cursive;
+    color: #dce5e7;
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+  .altext button{
+    background-color: #7566c1;
+    height: 40px;
+    width: 150px;
+    border: 1px solid #625f5f;
+   color: #dce5e7;
+   font-size: large;
+   border:1 px solid rgb(117, 117, 182);
+   border-radius: 30px;
+    
+  }
+  .altext button:hover{
+    background-color: #4a475c;
+  }
 
+
+  /* CAROUSEL */
+
+  .carousel-item {
+    color: red;
+    font-weight: bolder;
+
+  }
+  .carousel-item p{
+    color: yellow;
+
+  }
+
+
+  /* ABOUT */
+
+  .parent {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  border: 1px solid red;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+  background-color: #cebe0d;
+  font-weight: bold;
+}
+.child:hover{
+  background-color: #8c810a;
+}
+.child1 {
+  display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+  font-size: 50px;
+  color: #f95f0c;
+}
+#wel{
+  text-align: center;
+}
+.col .img{
+  text-align: center;
+}
 
 
   /*---------------------------------------
