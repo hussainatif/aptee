@@ -2,19 +2,39 @@
 {% extends 'base.html' %}
 <!-- page title-->
 {% block title %}
-  i am atif
+  Aptee
 {% endblock %}
 {% block page_heading%}
-  yo1
+  Aptee
   <!--Page heading-->
 {% endblock %}
-{% block nav_heading%} 
-yo1
-{% endblock %}
 {% block content %}
+<!--form to add the new item in the list-->
+<h1>Register Panel.</h1>
+<div>
+  {{message}}
+  <form class="form" action="{{ url_for('Signup')}}" method="post">
+    {{form.csrf_token}}
+    <div class="email_id"> {{ form.email_id }}</div>
+    <div class="password"> {{ form.password }}</div>
+    <div class="name"> {{ form.name }}</div>
+    <div class="sub_button"><button style="vertical-align:middle" type="submit" class="btn btn-primary">Sign up!</button></div>
+  </form>
+</div>
+<h1>Login Panel.</h1>
+<div>
+  <form class="form" action="{{ url_for('home')}}" method="post">
+    {{form.csrf_token}}
+    <div class="email_id"> {{ form.email_id }}</div>
+    <div class="password"> {{ form.password }}</div>
+    <div class="sub_button"><button style="vertical-align:middle" type="submit" class="btn btn-primary">Sign in!</button></div>
+  </form>
+</div>
+
 {% endblock %}
 {% block style %}
     <!--Style block-->
-    <style>        
+    <style>
+    
     </style>
 {% endblock %}
