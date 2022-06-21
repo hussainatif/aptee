@@ -12,11 +12,7 @@ class SignupForm(Form):
         email_id = StringField(id='Register_email',validators=[InputRequired(), Length(min=4, max=20)],render_kw={"placeholder": "Let the autofill complete it @gmail.com"})
         password = PasswordField(id='Register_password',validators=[InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Type in a password you won't remember"})
         name=StringField(id='Register_name',validators=[InputRequired()],render_kw={"placeholder": "What should we call you?"})
-        target_exam=StringField(id='Register_target_exam',validators=[InputRequired()],render_kw={"placeholder": "What is your Target Exam?"})
-        name=StringField(id='Register_name',validators=[InputRequired()],render_kw={"placeholder": "What should we call you?"})
-        name=StringField(id='Register_name',validators=[InputRequired()],render_kw={"placeholder": "What should we call you?"})
-        name=StringField(id='Register_name',validators=[InputRequired()],render_kw={"placeholder": "What should we call you?"})
-
+        
 #connecting the login sheet to backend
 auth =  {
   "type": "service_account",
@@ -34,27 +30,23 @@ auth =  {
 gc = gspread.service_account_from_dict(auth)
 sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1CyWjl6Y5Gi_e3z7A8wtw-qOaBe3GvCD4sqWWvaMubXY/edit?usp=sharing')
 wks=sh.worksheet("Client_Details")
-#print(wks.row_values(1))
 @app.route('/', methods =['POST', 'GET'])
 def home():
         form = SignupForm(flask.request.form)
-        if form.email_id.data not in wks.col_values(1):
-                return flask.render_template('index.html',form=form,message="Please Register your email here! ")        
-        else:
+        return flask.render_template('index.html',form=form)
+                
+@app.route('/Signin', methods =['POST'])
+def Signup():
+        form = SignupForm(flask.request.form)
+        if form.email_id.data in wks.col_values(1):
                 pos =wks.find(form.email_id.data.lower())
-                if form.password.data!=wks.cell(pos.row,12).value:
+                if form.password.data!=wks.cell(pos.row,3).value:
                         return flask.render_template('index.html',form=form,message="Password incorrect")
                 else:
                         return flask.render_template('index.html',form=form,message="Logged in Successfully")
-@app.route('/Signup', methods =['POST'])
-def Signup():
-        form =SignupForm(flask.request.form)
-        #if len(df[df['email_id']==form.email_id.data])>0:
-        #        return flask.render_template('index.html',form=form,message="The Email is already registered Please Login")
-        #else:
-        #        cells = wks.get_all_values(include_tailing_empty_rows=False, include_tailing_empty=False, returnas='matrix')
-        #        wks = wks.insert_rows(len(cells), number=1, values= [form.email_id.data,form.name.data,'','','','','','','','','',form.password.data])
-        return flask.render_template('register.html',form=form)
+        else:
+                wks.append_row([form.email_id.data,form.name.data,form.password.data])
+                return flask.render_template('index.html',form=form,message="registration Successful! ")
 
 if __name__ == '__main__':
     app.run(debug = True)
