@@ -12,6 +12,7 @@
 <!--form to add the new item in the list-->
 <h1>Login Panel.</h1>
 <div>
+  {{message}} {{url_for('Signup')}}
   <form class="form" action="{{ url_for('home')}}" method="post">
     {{form.csrf_token}}
     <div class="email_id"> {{ form.email_id }}</div>
