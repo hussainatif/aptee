@@ -6,13 +6,13 @@
 {% endblock %}
 {% block page_heading%}
   Aptee
-  <!--Page heading-->
+  <!--Page headasdasdadasdading-->
 {% endblock %}
 {% block content %}
 <!--form to add the new item in the list-->
 <h1>Login Panel.</h1>
 <div>
-  {{message}}
+   {{message}}<!-- no ungli -->
   <form class="form" action="{{ url_for('Signup')}}" method="post">
     {{form.csrf_token}}
     <div class="email_id"> {{ form.email_id }}</div>
