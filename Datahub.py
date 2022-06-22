@@ -1,6 +1,5 @@
-import pygsheets
-import json
-import pandas as pd
+import gspread
+
 auth =  {
   "type": "service_account",
   "project_id": "aptee-353914",
@@ -14,15 +13,10 @@ auth =  {
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/datahub%40aptee-353914.iam.gserviceaccount.com"
 }
 
-with open('Auth.json' , 'w') as Auth :
-  Auth.write(json.dumps(auth))
-  Auth.close()
-gc = pygsheets.authorize(service_file = 'Auth.json')
+gc = gspread.service_account_from_dict(auth)
 sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1CyWjl6Y5Gi_e3z7A8wtw-qOaBe3GvCD4sqWWvaMubXY/edit?usp=sharing')
-wks = sh.worksheet_by_title('Client_Details')
-cells = wks.get_all_values(include_tailing_empty_rows=False, include_tailing_empty=False, returnas='matrix')
-email=wks.get_values('A2','A'+str(len(cells)),include_tailing_empty_rows=False, include_tailing_empty=False, returnas='cell')
-print(email)
+wks=sh.worksheet("Client_Details")
+print(wks.find("aaaaaa"))
 
 #worksheet = wks.insert_rows(last_row, number=1, values= ["YO"])
 #df1 = wks.get_as_df()
