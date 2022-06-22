@@ -13,11 +13,17 @@
 <h1>Register Panel.</h1>
 <div>
   {{message}}
-  <form class="form" action="{{ url_for('Signup')}}" method="post">
+  <form class="form" action="{{ url_for('account')}}" method="post">
     {{form.csrf_token}}
     <div class="email_id"> {{ form.email_id }}</div>
-    <div class="password"> {{ form.password }}</div>
     <div class="name"> {{ form.name }}</div>
+    <div class="DOB"> {{ form.DOB}}</div>
+    <div class="gender"> {{ form.gender}}</div>
+    <div class="name"> {{form.target}}</div>
+    <div class="age"> {{ form.course}}</div>
+    <div class="age"> {{ form.college}}</div>
+    <div class="age"> {{ form.college_location}}</div>
+    <div class="age"> {{ form.semester}}</div>
     <div class="sub_button"><button style="vertical-align:middle" type="submit" class="btn btn-primary">Sign up!</button></div>
   </form>
 </div>
