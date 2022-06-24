@@ -9,6 +9,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <title>
             {% block title %}
             {% endblock %}
@@ -20,22 +23,39 @@
             {% endblock %}
         </h1>
       <!-- Navbar here -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-            <a class="navbar-brand" href="">New List</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/DibyaSadhukhan/Flask_mini_projects">Other Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=dibyasadhukhan%40gmail.com&authuser=0">Contact us</a>
-                </li>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> Aptee</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-md-auto gap-4">
+              <li class="nav-item rounded">
+                <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill me-2"></i>Home</a>
+              </li>
+              <li class="nav-item rounded">
+                <a class="nav-link" href="#"><i class="bi bi-people-fill me-2"></i>About</a>
+              </li>
+              <li class="nav-item rounded">
+                <a class="nav-link" href="#"><i class="bi bi-people-fill me-2"></i>Events</a>
+              </li>
+              <li class="nav-item rounded">
+                <a class="nav-link" href="#"><i class="bi bi-telephone-fill me-2"></i>Contact</a>
+              </li>
+              <!-- <li class="nav-item login rounded">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-2"></i><span>LogIn/SignUp</span></a>
+              </li> -->
+              <li class="nav-item login rounded">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-2"></i><span>
+                  <button id="loginbutton" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign In/Register</button>
+                </span></a>
+              </li>
             </ul>
+          </div>
         </div>
-        </nav>
+      </nav>
+      
       <!-- the content of the page -->
         {% block content %}
 
@@ -47,7 +67,7 @@
     {% endblock %}
    <style>
 
-        body {
+        /* body {
             background-color: #212121;
             color: white;
         }
@@ -62,6 +82,17 @@
         @media all and (max-width: 730px){
         }
         @media all and (max-width: 400px){
+        } */
+        
+        .navbar-nav .nav-item:hover {
+        background-color: rgba(180, 190, 203, 0.4);
         }
+        .login{
+            background-color: rgb(160, 14, 14);
+        }
+        .login span{
+            color: white;
+        }
+
     </style>
 </html>
