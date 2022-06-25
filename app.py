@@ -25,7 +25,7 @@ class SignupForm(Form):
         college_location=StringField(id='Register_clg_location',validators=[InputRequired()],render_kw={"placeholder": "Where is your college?"})
         course=SelectField(id='Register_course',validators=[InputRequired()],choices=courses,render_kw={"placeholder": "What Course are you enrolled in?"})
         DOB=DateField(id='Register_passout_year',validators=[InputRequired()],render_kw={"placeholder": "Tell us when to wish you?"},format="%Y-%m-%d")
-        semster=IntegerField(id='Register_age',validators=[InputRequired()],render_kw={"placeholder": "Which semester are you in? (0 if already passedout) "})
+        semester=IntegerField(id='Register_age',validators=[InputRequired()],render_kw={"placeholder": "Which semester are you in? (0 if already passedout) "})
 #connecting the login sheet to backend
 auth =  {
   "type": "service_account",
@@ -59,19 +59,23 @@ def home():
                         return flask.render_template('index.html',form=form,message="registration Successful! ")
         else:
                 return flask.render_template('index.html',form=form)
-@app.route('/account_creation',methods=['GET','POST'])
-def account():
+@app.route('/account_creation/<id>',methods=['GET','POST'])
+def account(id):
         sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1CyWjl6Y5Gi_e3z7A8wtw-qOaBe3GvCD4sqWWvaMubXY/edit?usp=sharing')
         wks=sh.worksheet("Client_Details")
         form = SignupForm(flask.request.form)
-        pos=wks.find(form.email_id.data.lower())
-        wks.update_cell(pos.row, 5, form.DOB.data)
-        wks.update_cell(pos.row, 6, form.target.data)
-        wks.update_cell(pos.row, 7, form.gender.data)
-        wks.update_cell(pos.row, 8, form.college.data)
-        wks.update_cell(pos.row, 9, form.college_location.data)
-        wks.update_cell(pos.row, 10, form.course.data)
-        wks.update_cell(pos.row, 11, form.semster.data)       
-        return flask.render_template('register.html',form=form)
+        print(id)
+        if wks.find(id):
+                pos=wks.find(id)
+                wks.update_cell(pos.row, 5, str(form.DOB.data))
+                wks.update_cell(pos.row, 6, form.target.data)
+                wks.update_cell(pos.row, 7, form.gender.data)
+                wks.update_cell(pos.row, 8, form.college.data)
+                wks.update_cell(pos.row, 9, form.college_location.data)
+                wks.update_cell(pos.row, 10, form.course.data)
+                wks.update_cell(pos.row, 11, form.semester.data)   
+                return flask.render_template('register.html',form=form,id=id)
+        else:
+                return flask.render_template('index.html',form=form,message="error")
 if __name__ == '__main__':
     app.run(debug = True)

@@ -17,7 +17,8 @@ gc = gspread.service_account_from_dict(auth)
 sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1CyWjl6Y5Gi_e3z7A8wtw-qOaBe3GvCD4sqWWvaMubXY/edit?usp=sharing')
 wks=sh.worksheet("Client_Details")
 print(wks.find("aaaaaa"))
-
+if wks.find('adsawadadsa'):
+  print("yp")
 #worksheet = wks.insert_rows(last_row, number=1, values= ["YO"])
 #df1 = wks.get_as_df()
 #print(df1.head())
