@@ -42,15 +42,23 @@
               <!-- <li class="nav-item login rounded">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-2"></i><span>LogIn/SignUp</span></a>
               </li> -->
+              {%if id%}
+              <li class="nav-item rounded">
+                <a class="nav-link" href="/Dashboard/{{id}}"><i class="bi bi-telephone-fill me-2"></i>Dashboard</a>
+              </li>
+              {%else%}
               <li class="nav-item login rounded">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-2"></i><span>
                   <button id="loginbutton" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign In/Register</button>
                 </span></a>
               </li>
+              {%endif%}
+              
             </ul>
           </div>
         </div>
       </nav>
+      
       <!--change 1-->
       <!-- the content of the page -->
         {% block content %}

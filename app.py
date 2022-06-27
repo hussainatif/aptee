@@ -52,7 +52,7 @@ def home():
                         if form.password.data!=wks.cell(pos.row,4).value:
                                 return flask.render_template('index.html',form=form,message="Password incorrect")
                         else:
-                                return flask.render_template('index.html',form=form,message="Logged in Successfully",id=wks.cell(pos.row,1))
+                                return flask.render_template('index.html',form=form,message="Logged in Successfully",id=wks.cell(pos.row,1).value)
                 else:
                         time.sleep(random.randint(1,3))
                         id="CL"+datetime.now().strftime("%d%m%Y%H%M%S")
